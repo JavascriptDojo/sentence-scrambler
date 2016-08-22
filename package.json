@@ -1,0 +1,32 @@
+{
+  "name": "sentence-scrambler",
+  "version": "0.1.0",
+  "description": "A library designed as a teaching aid for foreign language students.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JavascriptDojo/sentence-scrambler.git"
+  },
+  "keywords": [
+    "sentence",
+    "scrambler",
+    "Japanese",
+    "tutorial"
+  ],
+  "author": "JS Dojo: Cheltenham",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JavascriptDojo/sentence-scrambler/issues"
+  },
+  "homepage": "https://github.com/JavascriptDojo/sentence-scrambler#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  }
+}
