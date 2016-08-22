@@ -24,7 +24,7 @@ describe("Sentence Scrambler", function () {
 
             var ss = new SentenceScrambler();
 
-            // "add_sentence" will take an array, where each element of the
+            // "add_sentence" will take a string, where each element of the
             // array will be a word or symbol which makes-up a sentence. The order
             // that the words are added is important. Returns the ID of the sentence
             // that was added.
@@ -50,10 +50,10 @@ describe("Sentence Scrambler", function () {
 
         describe("#add_sentence", function () {
 
-            it("should let me add an array, and return the ID of this sentence", function () {
+            it("should let me add a string, and return the ID of this sentence", function () {
 
                 var ss       = new SentenceScrambler(),
-                    sentence = ["WHEN", "IS", "A", "CAT", "NOT", "A", "CAT"],
+                    sentence = "ここ には　新聞 も　ざっし も　あります。",
                     result   = ss.add_sentence(sentence);
 
                 expect(result).to.be.a("number");
