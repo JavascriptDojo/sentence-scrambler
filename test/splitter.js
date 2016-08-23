@@ -33,6 +33,14 @@ describe("Sentence Splitter is a simple function for splitting sentences", funct
         expect(result).to.eql(expected);
     });
 
+    it("should return false if the sentence is 'empty'", function () {
+
+        var result   = splitter("           "),
+            expected = false;
+
+        expect(result).to.eql(expected);
+    });
+
     it("should return false if the 'thing' given to splitter is not a string", function () {
 
         var list_of_things_to_try = [ false, {}, [], /.+/, null, undefined ];
