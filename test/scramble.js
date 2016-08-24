@@ -46,7 +46,6 @@ describe("Sentence Scrambler", function () {
      */
     describe("Adding new words to the Sentence Scrambler object", function () {
 
-
         describe("#add_sentence", function () {
 
             it("should let me add a string, and return the ID of this sentence", function () {
@@ -58,6 +57,35 @@ describe("Sentence Scrambler", function () {
                 expect(result).to.be.a("number");
                 expect(ss.count_sentences()).to.equal(1);
             });
+
+            it("should NOT let me add an empty string as a sentence", function () {
+
+                var ss = new SentenceScrambler(),
+                    sentence = "",
+                    result   = false;
+
+                expect(ss.add_sentence(sentence)).to.eql(false);
+            });
+
+            it("should NOT let me add a string full of spaces", function () {
+                var ss       = new SentenceScrambler(),
+                    sentence = "           ",
+                    result   = false;
+
+                expect(ss.add_sentence(sentence)).to.eql(false);
+            });
+
+            it("should not let me add anything that is not a string", function () {
+
+                var ss        = new SentenceScrambler(),
+                    sentences = [false, /./, [], {}, true, 1.0, Math.PI, NaN, Infinity];
+
+                sentences.forEach(function (thing) {
+                    expect(ss.add_sentence(thing)).to.eql(false);
+                });
+
+            });
+
         });
     });
 
