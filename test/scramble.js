@@ -17,7 +17,6 @@ var SentenceScrambler = require("../lib/sentence-scrambler");
 
 describe("Sentence Scrambler", function () {
 
-
     describe("The SentenceScrambler's public interface", function () {
 
         it("should export the following public functions", function () {
@@ -61,4 +60,27 @@ describe("Sentence Scrambler", function () {
             });
         });
     });
+
+    /*
+     * +----------------------+
+     * | Dependency Injection |
+     * +----------------------+
+     */
+    describe("should support dependency injection", function () {
+
+        it("should accept a 'splitter' function passed as an option", function (done) {
+
+            var expected = "THE CAT SAT ON THE MAT",
+                result, ss;
+
+            function test_split_function (sentence) {
+                expect(sentence).to.eql(expected);
+                done();
+            };
+
+            ss = new SentenceScrambler({ splitter: test_split_function });
+            ss.add_sentence(expected);
+        });
+    });
+
 });
